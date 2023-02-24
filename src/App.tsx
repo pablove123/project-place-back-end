@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import AddProject from './components/AddProject/AddProject'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -49,6 +50,10 @@ function App(): JSX.Element {
         <Route
           path="/login"
           element={<Login handleAuthEvt={handleAuthEvt} />}
+        />
+        <Route
+          path="/project"
+          element={<AddProject />}
         />
         <Route
           path="/profiles"
