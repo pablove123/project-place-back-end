@@ -20,3 +20,11 @@ export interface User {
   createdAt: string;
   updatedAt: string;
 }
+export interface Project {
+  name: string;
+  github: string;
+  app: string;
+  photo?: string;
+  createdAt: string;
+  updatedAt: string;
+}

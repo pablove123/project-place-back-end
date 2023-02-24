@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import AddProject from './components/AddProject/AddProject'
+import ProjectList from './components/Projects/ProjectList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -21,12 +22,14 @@ import * as authService from './services/authService'
 import './App.css'
 
 // types
-import { User } from './types/models'
+import { User, Project } from './types/models'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
   
   const [user, setUser] = useState<User | null>(authService.getUser())
+
+  const [projects, setprojects] = useState<Project[]>([]) 
 
   const handleLogout = (): void => {
     authService.logout()
@@ -54,6 +57,10 @@ function App(): JSX.Element {
         <Route
           path="/project"
           element={<AddProject />}
+        />
+        <Route
+          path="/project"
+          element={<ProjectList />}
         />
         <Route
           path="/profiles"

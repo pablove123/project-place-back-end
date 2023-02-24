@@ -18,6 +18,11 @@ const AddProject = (): JSX.Element => {
     setForm({ ...form, [event.target.name]: event.target.value })
   }
 
+  // const handleSubmit = (event) => {
+  //   event.preventDefault()
+  //   // props.handleAddProject(form, photo.photo)
+  // }
+
   return ( 
     <>
     <main className="addProject">
@@ -26,6 +31,7 @@ const AddProject = (): JSX.Element => {
         <div>
           <label htmlFor="name">Name</label>
           <input
+            onChange={handleChange}
             type="text" 
             name="name"
             value={form.name}
