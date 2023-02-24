@@ -1,5 +1,5 @@
 // npm modules 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // page components
@@ -17,6 +17,8 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as projectService from './services/projectService'
+
 
 // stylesheets
 import './App.css'
@@ -29,7 +31,7 @@ function App(): JSX.Element {
   
   const [user, setUser] = useState<User | null>(authService.getUser())
 
-  const [projects, setprojects] = useState<Project[]>([]) 
+  const [projects, setProjects] = useState<Project[]>([]) 
 
   const handleLogout = (): void => {
     authService.logout()
@@ -40,6 +42,14 @@ function App(): JSX.Element {
   const handleAuthEvt = (): void => {
     setUser(authService.getUser())
   }
+
+  useEffect(()=>{
+    const fetchProjects = async (): Promise<void> => {
+      const projectsData:Project[] = await projectService.getAllProjects()
+      setProjects(projectsData)
+    }
+    if (user) fetchProjects()
+  }, [user])
 
   return (
     <>
@@ -59,8 +69,8 @@ function App(): JSX.Element {
           element={<AddProject />}
         />
         <Route
-          path="/project"
-          element={<ProjectList />}
+          path="/projects"
+          element={<ProjectList projects={projects}/>}
         />
         <Route
           path="/profiles"
