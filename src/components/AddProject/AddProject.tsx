@@ -1,5 +1,23 @@
-const AddProject = () => {
-  
+import { ReactEventHandler, useState } from "react";
+import { CreateProjectFormData } from "../../types/forms";
+
+interface CreateProjectProps{
+  // profile:profile, 
+  handleCreate: (FormData: CreateProjectFormData) => void
+}
+
+const AddProject = (): JSX.Element => {
+  const [form, setForm] = useState<CreateProjectFormData>({
+    name: '',
+    github: '',
+    photo: '',
+    app: '',
+  })
+
+  const handleChange = (event:React.ChangeEvent<HTMLInputElement>):void => {
+    setForm({ ...form, [event.target.name]: event.target.value })
+  }
+
   return ( 
     <>
     <main className="addProject">
@@ -10,7 +28,7 @@ const AddProject = () => {
           <input
             type="text" 
             name="name"
-            // value={form.name}
+            value={form.name}
             placeholder="Project Name"/>
         </div>
         <div>
@@ -18,7 +36,7 @@ const AddProject = () => {
           <input
             type="text" 
             name="app"
-            // value={form.app}
+            value={form.app}
             placeholder="Deployed App link"/>
         </div>
         <div>
@@ -26,7 +44,7 @@ const AddProject = () => {
           <input
             type="text" 
             name="name"
-            // value={form.name}
+            value={form.name}
             placeholder="Github Link"/>
         </div>
         <div>
@@ -39,6 +57,7 @@ const AddProject = () => {
             // onChange={handleChangePhoto}
           />
         </div>
+        <button>Create Project</button>
       </form>
     </main>
     </>

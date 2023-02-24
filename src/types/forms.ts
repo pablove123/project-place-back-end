@@ -25,3 +25,10 @@ export interface ChangePasswordFormData {
 export interface PhotoFormData {
   photo: File | null;
 }
+
+export interface CreateProjectFormData{
+  name: string,
+    github: string,
+    photo: string,
+    app: string,
+}
