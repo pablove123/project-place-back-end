@@ -22,6 +22,8 @@ const Profiles = (): JSX.Element => {
     fetchProfiles()
   }, [])
 
+  
+
   if(!profiles.length) return <p>No profiles yet</p>
 
   return (

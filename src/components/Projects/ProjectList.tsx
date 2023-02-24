@@ -5,11 +5,12 @@ interface ProjectProps{
   projects: Project[]
 }
 const ProjectList = (props:ProjectProps) => {
-  console.log(props)
+  const {projects} = props
+  console.log("projectList props", props)
   return (
     <>
     <h1>Project List</h1>
-    <ProjectCard/>
+    <ProjectCard projects={projects}/>
     </>
     );
 

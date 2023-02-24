@@ -43,14 +43,18 @@ function App(): JSX.Element {
     setUser(authService.getUser())
   }
 
-  useEffect(()=>{
+  useEffect(():void =>{
     const fetchProjects = async (): Promise<void> => {
-      const projectsData:Project[] = await projectService.getAllProjects()
-      setProjects(projectsData)
+      try {
+        const projectsData: Project[] = await projectService.getAllProjects()
+        setProjects(projectsData) 
+      } catch (error) {
+        console.log(error)
+      }
     }
     if (user) fetchProjects()
-  }, [user])
-
+  },[])
+  
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
