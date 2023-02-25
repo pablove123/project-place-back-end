@@ -54,7 +54,14 @@ function App(): JSX.Element {
       }
     }
     if (user) fetchProjects()
-  },[])
+  },[user])
+
+  const handleDeleteProject = async (name) => {
+    const deletedProject = await projectService.deleteProject(name)
+    setProjects(projects.filter(b => b.name !== deletedProject.name))
+    navigate('/projects')
+  }
+
 
   // const projectPhotoHelper = async (photo:string, id): Promise<void> => {
   //   const photoData = new FormData()
@@ -90,7 +97,7 @@ function App(): JSX.Element {
         />
         <Route
           path="/projects"
-          element={<ProjectList projects={projects}/>}
+          element={<ProjectList projects={projects} user={user} handleDeleteProject={handleDeleteProject} />}
         />
         <Route
           path="/profiles"

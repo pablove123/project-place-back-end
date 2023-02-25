@@ -33,6 +33,19 @@ const create = async (projectData:object) => {
     console.log(error);
   }
 }
+const deleteProject = async (name) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${name}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 // const addPhoto = async (photoData, Id:number) => {
 //   const res = await fetch(`${BASE_URL}/${Id}/add-photo`, {
@@ -49,5 +62,6 @@ const create = async (projectData:object) => {
 export{
   getAllProjects, 
   // addPhoto, 
-  create
+  create, 
+  deleteProject
 }

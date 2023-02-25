@@ -1,17 +1,18 @@
-import { Project } from "../../types/models";
+import { Project, User } from "../../types/models";
 import ProjectCard from "../ProjectCard/projectCard";
 
 interface ProjectProps{
-  projects: Project[]
+  projects: Project[], 
+  user: User | null;
+  handleDeleteProject: (name) => void
 }
 const ProjectList = (props:ProjectProps) => {
   const {projects} = props
-  console.log(projects)
   return (
     <>
     <h1>Project List</h1>
     <div className='projectListContainer'>
-    <ProjectCard projects={projects}/>
+    <ProjectCard projects={projects} user={props.user} handleDeleteProject={props.handleDeleteProject}/>
     </div>
     </>
     );

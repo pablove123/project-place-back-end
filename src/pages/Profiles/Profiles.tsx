@@ -30,10 +30,13 @@ const Profiles = (): JSX.Element => {
     <>
       <h1>Hello. This is a list of all the profiles.</h1>
       {profiles.map((profile: Profile) =>
+      <>
+          {console.log(profile)}
         <p key={profile.id}>{profile.name}</p>
+      </>
       )}
     </>
   )
 }
- 
+
 export default Profiles

@@ -1,7 +1,9 @@
-import { Project } from "../../types/models";
+import { Project, User } from "../../types/models";
 
 interface ProjectCardProps{
   projects: Project[],
+  user: User | null | number;
+  handleDeleteProject: (name) => void
 }
 
 const ProjectCard = (props:ProjectCardProps):JSX.Element => {
@@ -16,6 +18,12 @@ const ProjectCard = (props:ProjectCardProps):JSX.Element => {
           <p>Photo:{project.picture}</p>
           <p><a href={project.github}>Github</a></p>
           <p><a href={project.app}>Deployed App</a></p>
+          
+          {project.profileId === props.user.id &&
+            <div>
+              <button onClick={() => props.handleDeleteProject(project.name)}>Delete</button>
+            </div>
+          }
           </div>
         </>
       )}
