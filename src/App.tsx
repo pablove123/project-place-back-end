@@ -20,6 +20,7 @@ import * as authService from './services/authService'
 import * as projectService from './services/projectService'
 
 
+
 // stylesheets
 import './App.css'
 
@@ -54,6 +55,21 @@ function App(): JSX.Element {
     }
     if (user) fetchProjects()
   },[])
+
+  const projectPhotoHelper = async (photo:string, id): Promise<void> => {
+    const photoData = new FormData()
+    photoData.append('photo', photo)
+    return await projectService.addPhoto(photoData, id)
+  }
+
+  const handleAddProject = async (projectData:object, photo:string): Promise<void> => {
+    const newProject = await projectService.create(projectData)
+    if(photo){
+      newProject.photo = await projectPhotoHelper(photo, newProject.profileId)
+    }
+    setProjects([newProject, ...projects])
+    // navigate(`/projects/${newProject._id}`)
+  }
   
   return (
     <>
@@ -70,7 +86,7 @@ function App(): JSX.Element {
         />
         <Route
           path="/project"
-          element={<AddProject />}
+          element={<AddProject handleAddProject={handleAddProject} />}
         />
         <Route
           path="/projects"

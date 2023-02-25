@@ -6,28 +6,32 @@ interface CreateProjectProps{
   handleCreate: (FormData: CreateProjectFormData) => void
 }
 
-const AddProject = (): JSX.Element => {
+const AddProject = (props): JSX.Element => {
   const [form, setForm] = useState<CreateProjectFormData>({
     name: '',
     github: '',
-    photo: '',
+    picture: '',
     app: '',
   })
+  const [photo, setPhoto] = useState({})
 
   const handleChange = (event:React.ChangeEvent<HTMLInputElement>):void => {
     setForm({ ...form, [event.target.name]: event.target.value })
   }
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault()
-  //   // props.handleAddProject(form, photo.photo)
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    props.handleAddProject(form)
+  }
+  // const handleChangePhoto = (evt) => {
+  //   setPhoto({ photo: evt.target.files[0] })
   // }
 
   return ( 
     <>
     <main className="addProject">
       <h1>This is project</h1> 
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name</label>
           <input
@@ -40,6 +44,7 @@ const AddProject = (): JSX.Element => {
         <div>
           <label htmlFor="app">Deployed App</label>
           <input
+          onChange={handleChange}
             type="text" 
             name="app"
             value={form.app}
@@ -48,22 +53,22 @@ const AddProject = (): JSX.Element => {
         <div>
           <label htmlFor="github">Github</label>
           <input
+          onChange={handleChange}
             type="text" 
-            name="name"
-            value={form.name}
+            name="github"
+            value={form.github}
             placeholder="Github Link"/>
         </div>
         <div>
-          <label htmlFor="photo">Upload Screenshot</label>
+          <label htmlFor="picture">Image Link</label>
           <input
-            type="file"
-            className="form-control"
-            id="photo-upload"
-            name="photo"
-            // onChange={handleChangePhoto}
-          />
+          onChange={handleChange}
+          type="text" 
+          name="picture"
+          value={form.photo}
+          placeholder="Image Link"/>
         </div>
-        <button>Create Project</button>
+        <button type="submit">Create Project</button>
       </form>
     </main>
     </>

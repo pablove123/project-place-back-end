@@ -24,7 +24,7 @@ export interface Project {
   name: string;
   github: string;
   app: string;
-  photo?: string;
+  picture?: string;
   createdAt: string;
   updatedAt: string;
 }

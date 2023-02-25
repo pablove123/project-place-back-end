@@ -29,6 +29,6 @@ export interface PhotoFormData {
 export interface CreateProjectFormData{
   name: string,
     github: string,
-    photo: string,
+    picture: string,
     app: string,
 }

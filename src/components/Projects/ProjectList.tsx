@@ -6,7 +6,7 @@ interface ProjectProps{
 }
 const ProjectList = (props:ProjectProps) => {
   const {projects} = props
-  console.log("projectList props", props)
+  console.log(projects)
   return (
     <>
     <h1>Project List</h1>

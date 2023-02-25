@@ -11,7 +11,6 @@ const ProjectCard = (props:ProjectCardProps):JSX.Element => {
     <>
       {projects.map((project)=>
         <>
-          {console.log("projectCard", project.name)}
           <p>Name:{project.name}</p>
           <p>Photo:{project.photo}</p>
           <a href={project.github}>Github</a>
