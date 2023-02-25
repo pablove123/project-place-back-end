@@ -11,12 +11,12 @@ const ProjectCard = (props:ProjectCardProps):JSX.Element => {
     <>
       {projects.map((project)=>
         <>
+          <div className="projectCard">
           <p>Name:{project.name}</p>
-          <p>Photo:{project.photo}</p>
-          <a href={project.github}>Github</a>
-          <br />
-          <br />
-          <a href={project.app}>Deployed App</a>
+          <p>Photo:{project.picture}</p>
+          <p><a href={project.github}>Github</a></p>
+          <p><a href={project.app}>Deployed App</a></p>
+          </div>
         </>
       )}
     </>

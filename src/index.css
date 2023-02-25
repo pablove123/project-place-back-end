@@ -47,8 +47,24 @@ nav li {
 h1{
   margin-top: 100px;
 }
-article{
-  color: black;
-  border: black;
-  border-radius: 2px solid black;
+.projectCard{
+  margin: 20px;
+  height: 250px;
+  width: 200px;
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 15px;
+  border: 1px solid gray;
+  background-color: whitesmoke;
+}
+
+.projectListContainer {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: lightgray;
+  /* justify-content: center; */
+  align-items: center;
 }

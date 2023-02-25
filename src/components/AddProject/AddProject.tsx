@@ -19,7 +19,7 @@ const AddProject = (props): JSX.Element => {
     setForm({ ...form, [event.target.name]: event.target.value })
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event:ReactEventHandler):void => {
     event.preventDefault()
     props.handleAddProject(form)
   }
@@ -65,7 +65,7 @@ const AddProject = (props): JSX.Element => {
           onChange={handleChange}
           type="text" 
           name="picture"
-          value={form.photo}
+          value={form.picture}
           placeholder="Image Link"/>
         </div>
         <button type="submit">Create Project</button>

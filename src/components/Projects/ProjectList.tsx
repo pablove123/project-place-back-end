@@ -10,7 +10,9 @@ const ProjectList = (props:ProjectProps) => {
   return (
     <>
     <h1>Project List</h1>
+    <div className='projectListContainer'>
     <ProjectCard projects={projects}/>
+    </div>
     </>
     );
 
