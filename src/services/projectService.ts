@@ -46,6 +46,20 @@ const deleteProject = async (name) => {
     console.log(error)
   }
 }
+const updateProject = async (projectData: Project) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${projectData.name}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 // const addPhoto = async (photoData, Id:number) => {
 //   const res = await fetch(`${BASE_URL}/${Id}/add-photo`, {
@@ -63,5 +77,6 @@ export{
   getAllProjects, 
   // addPhoto, 
   create, 
-  deleteProject
+  deleteProject,
+  updateProject
 }

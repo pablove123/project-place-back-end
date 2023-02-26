@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import AddProject from './components/AddProject/AddProject'
 import ProjectList from './components/Projects/ProjectList'
+import UpdateProject from './components/UpdateProject/UpdateProject'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -61,6 +62,11 @@ function App(): JSX.Element {
     setProjects(projects.filter(b => b.name !== deletedProject.name))
     navigate('/projects')
   }
+  const handleUpdateProject = async (projectData: Project) => {
+    const updatedProject = await projectService.updateProject(projectData)
+    setProjects(projects.map((b) => projectData.name === b.name ? updatedProject : b))
+    navigate(`/projects`)
+  }
 
 
   // const projectPhotoHelper = async (photo:string, id): Promise<void> => {
@@ -97,7 +103,7 @@ function App(): JSX.Element {
         />
         <Route
           path="/projects"
-          element={<ProjectList projects={projects} user={user} handleDeleteProject={handleDeleteProject} />}
+          element={<ProjectList projects={projects} user={user} handleDeleteProject={handleDeleteProject} handleUpdateProject={handleUpdateProject} />}
         />
         <Route
           path="/profiles"
@@ -115,6 +121,11 @@ function App(): JSX.Element {
             </ProtectedRoute>
           }
         />
+        <Route path="/projects/:projectName/edit" element={
+          <ProtectedRoute user={user}>
+          <UpdateProject handleUpdateExperience={handleUpdateProject} />
+          </ProtectedRoute>
+        } />
       </Routes>
     </>
   )

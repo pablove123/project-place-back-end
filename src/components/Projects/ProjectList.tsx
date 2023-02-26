@@ -4,7 +4,8 @@ import ProjectCard from "../ProjectCard/projectCard";
 interface ProjectProps{
   projects: Project[], 
   user: User | null;
-  handleDeleteProject: (name) => void
+  handleDeleteProject: (name) => void;
+  handleUpdateProject: (projectData:Project) => void
 }
 const ProjectList = (props:ProjectProps) => {
   const {projects} = props
@@ -12,7 +13,7 @@ const ProjectList = (props:ProjectProps) => {
     <>
     <h1>Project List</h1>
     <div className='projectListContainer'>
-    <ProjectCard projects={projects} user={props.user} handleDeleteProject={props.handleDeleteProject}/>
+    <ProjectCard projects={projects} user={props.user} handleDeleteProject={props.handleDeleteProject} handleUpdateProject={props.handleUpdateProject}/>
     </div>
     </>
     );

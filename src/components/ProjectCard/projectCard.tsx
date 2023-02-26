@@ -1,9 +1,11 @@
 import { Project, User } from "../../types/models";
+import { Link } from "react-router-dom";
 
 interface ProjectCardProps{
   projects: Project[],
   user: User | null | number;
-  handleDeleteProject: (name) => void
+  handleDeleteProject: (name) => void;
+  handleUpdateProject: (projectData:Project) => void
 }
 
 const ProjectCard = (props:ProjectCardProps):JSX.Element => {
@@ -20,9 +22,14 @@ const ProjectCard = (props:ProjectCardProps):JSX.Element => {
           <p><a href={project.app}>Deployed App</a></p>
           
           {project.profileId === props.user.id &&
+          <>
             <div>
               <button onClick={() => props.handleDeleteProject(project.name)}>Delete</button>
             </div>
+            <div>
+            <Link to={`/projects/${project.name}/edit`} state={project}>Update Exerience</Link>
+            </div>
+          </>
           }
           </div>
         </>
