@@ -80,7 +80,7 @@ function App(): JSX.Element {
   //   return await projectService.addPhoto(photoData, id)
   // }
 
-  const handleAddProject = async (projectData:object, photo:string): Promise<void> => {
+  const handleAddProject = async (projectData:object): Promise<void> => {
     const newProject = await projectService.create(projectData)
     // if(photo){
     //   newProject.photo = await projectPhotoHelper(photo, newProject.profileId)

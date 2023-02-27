@@ -14,7 +14,7 @@ const UpdateProject = (props:UpdateProjectProps) => {
   const [form, setForm] = useState(state)
   console.log("this is state in UpdateProject", form)
   
-  const handleChange = ({ target }):void => {
+  const handleChange = ({ target } :React.ChangeEvent<HTMLInputElement>):void => {
     setForm({ ...form, [target.name]: target.value })
   }
 
@@ -22,7 +22,7 @@ const UpdateProject = (props:UpdateProjectProps) => {
   //   setForm({ ...form, [evt.target.name]: evt.target.value })
   // }
   
-  const handleSubmit = (e):void => {
+  const handleSubmit = (e:React.MouseEvent<HTMLFormElement>):void => {
     e.preventDefault()
     props.handleUpdateProject(form)
   }
@@ -30,7 +30,7 @@ const UpdateProject = (props:UpdateProjectProps) => {
   return ( 
     <>
       <main className="addProject">
-      <h1>This is project</h1> 
+      <h1>Update Your Project Below</h1> 
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name</label>
@@ -68,7 +68,7 @@ const UpdateProject = (props:UpdateProjectProps) => {
           value={form.picture}
           placeholder="Image Link"/>
         </div>
-        <button type="submit">Create Project</button>
+        <button type="submit">Update Project</button>
       </form>
     </main>
     </>

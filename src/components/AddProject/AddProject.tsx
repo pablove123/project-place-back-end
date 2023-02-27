@@ -32,7 +32,7 @@ const AddProject = (props:CreateProjectProps): JSX.Element => {
   return ( 
     <>
     <main className="addProject">
-      <h1>This is project</h1> 
+      <h1>Create A Project Below</h1> 
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name</label>
