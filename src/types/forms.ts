@@ -4,7 +4,7 @@ export interface CreateProjectFormData{
   name: string,
   github: string,
   picture: string,
-  app: string,
+  app: string
 }
 
 export interface UpdateProjectFormData{

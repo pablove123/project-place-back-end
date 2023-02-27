@@ -10,16 +10,19 @@ interface ProjectCardProps{
 
 const ProjectCard = (props:ProjectCardProps):JSX.Element => {
   const {projects} = props 
+  console.log(projects[1].profileId)
   if(!projects.length) return <p>Loading...</p>
   return ( 
     <>
       {projects.map((project)=>
         <>
           <div className="projectCard">
-          <p>Name:{project.name}</p>
-          <p>Photo:{project.picture}</p>
-          <p><a href={project.github}>Github</a></p>
-          <p><a href={project.app}>Deployed App</a></p>
+          <p id="projectName">{project.name}</p>
+          <p><img id="projectPicture" src={project.picture} alt="" /></p>
+          <div>
+            <p><a href={project.github}>Github</a></p>
+            <p><a href={project.app}>Deployed App</a></p>
+          </div>
           
           {project.profileId === props.user.id &&
           <>
