@@ -23,7 +23,7 @@ const ProjectCard = (props:ProjectCardProps):JSX.Element => {
             <a  id="app" href={project.app}><button>Deployed App</button></a>
           </div>
         
-          {project.profileId === props.user.id &&
+          {project.profileId === props.user?.id &&
           <>
             <div id="linkSection">
               <button id="delete" onClick={() => props.handleDeleteProject(project.name)}>Delete</button>
