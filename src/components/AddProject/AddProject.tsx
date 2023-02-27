@@ -3,10 +3,12 @@ import { CreateProjectFormData } from "../../types/forms";
 
 interface CreateProjectProps{
   // profile:profile, 
-  handleCreate: (FormData: CreateProjectFormData) => void
+  handleCreate: (FormData: CreateProjectFormData) => void, 
+  handleAddProject: (FormData: CreateProjectFormData) => void, 
+
 }
 
-const AddProject = (props): JSX.Element => {
+const AddProject = (props:CreateProjectProps): JSX.Element => {
   const [form, setForm] = useState<CreateProjectFormData>({
     name: '',
     github: '',
@@ -19,7 +21,7 @@ const AddProject = (props): JSX.Element => {
     setForm({ ...form, [event.target.name]: event.target.value })
   }
 
-  const handleSubmit = (event:ReactEventHandler):void => {
+  const handleSubmit = (event:React.MouseEvent<HTMLFormElement>):void => {
     event.preventDefault()
     props.handleAddProject(form)
   }

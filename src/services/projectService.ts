@@ -63,21 +63,8 @@ const updateProject = async (projectData: Project) => {
   }
 }
 
-// const addPhoto = async (photoData, Id:number) => {
-//   const res = await fetch(`${BASE_URL}/${Id}/add-photo`, {
-//     method: 'PUT',
-//     headers: {
-//       'Authorization': `Bearer ${tokenService.getToken()}`
-//     },
-//     body: photoData
-//   })
-// 	return await res.json()
-// }
-
-
 export{
   getAllProjects, 
-  // addPhoto, 
   create, 
   deleteProject,
   updateProject

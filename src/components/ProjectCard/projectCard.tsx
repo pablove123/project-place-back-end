@@ -3,23 +3,22 @@ import { Link } from "react-router-dom";
 
 interface ProjectCardProps{
   projects: Project[],
-  user: User | null | number;
+  user: User;
   handleDeleteProject: (name:string) => void;
   handleUpdateProject: (projectData:Project) => void
 }
 
 const ProjectCard = (props:ProjectCardProps):JSX.Element => {
   const {projects} = props 
-  console.log(projects[1].profileId)
   if(!projects.length) return <p>Loading...</p>
   return ( 
     <>
       {projects.map((project)=>
         <>
-          <div className="projectCard">
+          <div className="projectCard" key={project.name}>
           <p id="projectName">{project.name}</p>
           <p><img id="projectPicture" src={project.picture} alt="" /></p>
-          <div id="linkSection">
+          <div key={project.name} id="linkSection">
             <a id="github" href={project.github}><button>Github</button></a>
             <a  id="app" href={project.app}><button>Deployed App</button></a>
           </div>

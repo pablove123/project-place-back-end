@@ -59,8 +59,11 @@ function App(): JSX.Element {
 
   const handleDeleteProject = async (name:string) => {
     const deletedProject = await projectService.deleteProject(name)
-    setProjects(projects.filter(b => b.name !== deletedProject.name))
-    navigate('/projects')
+    // setProjects(projects.filter(b => b.name !== deletedProject.name))
+    // navigate('/')
+    const updatedProjects = await projectService.getAllProjects()
+    setProjects(updatedProjects)
+    navigate(`/projects`)
   }
   const handleUpdateProject = async (projectData: Project) => {
     const updatedProject = await projectService.updateProject(projectData)
