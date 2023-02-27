@@ -3,7 +3,7 @@ import ProjectCard from "../ProjectCard/projectCard";
 
 interface ProjectProps{
   projects: Project[], 
-  user: User | null;
+  user: User ;
   handleDeleteProject: (name:string) => void;
   handleUpdateProject: (projectData:Project) => void
 }
