@@ -10,6 +10,7 @@ interface ProjectCardProps{
 
 const ProjectCard = (props:ProjectCardProps):JSX.Element => {
   const {projects} = props 
+  const user:User|null = props.user
   if(!projects.length) return <p>Loading...</p>
   return ( 
     <>
@@ -22,7 +23,7 @@ const ProjectCard = (props:ProjectCardProps):JSX.Element => {
             <a id="github" href={project.github}><button>Github</button></a>
             <a  id="app" href={project.app}><button>Deployed App</button></a>
           </div>
-          
+        
           {project.profileId === props.user.id &&
           <>
             <div id="linkSection">
