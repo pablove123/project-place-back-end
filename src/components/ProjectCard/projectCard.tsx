@@ -19,18 +19,16 @@ const ProjectCard = (props:ProjectCardProps):JSX.Element => {
           <div className="projectCard">
           <p id="projectName">{project.name}</p>
           <p><img id="projectPicture" src={project.picture} alt="" /></p>
-          <div>
-            <p><a href={project.github}>Github</a></p>
-            <p><a href={project.app}>Deployed App</a></p>
+          <div id="linkSection">
+            <a id="github" href={project.github}><button>Github</button></a>
+            <a  id="app" href={project.app}><button>Deployed App</button></a>
           </div>
           
           {project.profileId === props.user.id &&
           <>
-            <div>
-              <button onClick={() => props.handleDeleteProject(project.name)}>Delete</button>
-            </div>
-            <div>
-            <Link to={`/projects/${project.name}`} state={project}>Update Exerience</Link>
+            <div id="linkSection">
+              <button id="delete" onClick={() => props.handleDeleteProject(project.name)}>Delete</button>
+              <Link to={`/projects/${project.name}`} state={project}><button id="update">Update Project</button></Link>
             </div>
           </>
           }
