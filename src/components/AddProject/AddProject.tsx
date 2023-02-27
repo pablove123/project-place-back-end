@@ -3,7 +3,7 @@ import { CreateProjectFormData } from "../../types/forms";
 
 interface CreateProjectProps{
   // profile:profile, 
-  handleCreate: (FormData: CreateProjectFormData) => void, 
+  // handleCreate: (FormData: CreateProjectFormData) => void, 
   handleAddProject: (FormData: CreateProjectFormData) => void, 
 
 }
@@ -25,9 +25,6 @@ const AddProject = (props:CreateProjectProps): JSX.Element => {
     event.preventDefault()
     props.handleAddProject(form)
   }
-  // const handleChangePhoto = (evt) => {
-  //   setPhoto({ photo: evt.target.files[0] })
-  // }
 
   return ( 
     <>

@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 
 interface ProjectCardProps{
   projects: Project[],
-  user: User;
+  user: User| null;
   handleDeleteProject: (name:string) => void;
   handleUpdateProject: (projectData:Project) => void
 }
 
 const ProjectCard = (props:ProjectCardProps):JSX.Element => {
   const {projects} = props 
-  const user:User|null = props.user
   if(!projects.length) return <p>Loading...</p>
   return ( 
     <>
