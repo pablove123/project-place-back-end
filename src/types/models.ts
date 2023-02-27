@@ -9,6 +9,7 @@ export interface Project {
   github: string;
   app: string;
   profileId: number;
+  id: number;
   picture?: string;
   createdAt: string;
   updatedAt: string;

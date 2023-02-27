@@ -1,5 +1,18 @@
 /* ---------==== custom forms ====--------- */
 
+export interface CreateProjectFormData{
+  name: string,
+  github: string,
+  picture: string,
+  app: string,
+}
+
+export interface UpdateProjectFormData{
+  name: string,
+  github: string,
+  picture: string,
+  app: string,
+}
 
 
 /* ---------===== auth forms =====--------- */
@@ -26,9 +39,3 @@ export interface PhotoFormData {
   photo: File | null;
 }
 
-export interface CreateProjectFormData{
-  name: string,
-    github: string,
-    picture: string,
-    app: string,
-}

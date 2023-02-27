@@ -57,14 +57,16 @@ function App(): JSX.Element {
     if (user) fetchProjects()
   },[user])
 
-  const handleDeleteProject = async (name) => {
+  const handleDeleteProject = async (name:string) => {
     const deletedProject = await projectService.deleteProject(name)
     setProjects(projects.filter(b => b.name !== deletedProject.name))
     navigate('/projects')
   }
   const handleUpdateProject = async (projectData: Project) => {
     const updatedProject = await projectService.updateProject(projectData)
-    setProjects(projects.map((b) => projectData.name === b.name ? updatedProject : b))
+    // setProjects(projects.map((b) => projectData.name === b.name ? updatedProject : b))
+    const updatedProjects = await projectService.getAllProjects()
+    setProjects(updatedProjects)
     navigate(`/projects`)
   }
 
@@ -121,9 +123,9 @@ function App(): JSX.Element {
             </ProtectedRoute>
           }
         />
-        <Route path="/projects/:projectName/edit" element={
+        <Route path="/projects/:projectName" element={
           <ProtectedRoute user={user}>
-          <UpdateProject handleUpdateExperience={handleUpdateProject} />
+          <UpdateProject handleUpdateProject={handleUpdateProject} />
           </ProtectedRoute>
         } />
       </Routes>

@@ -33,7 +33,7 @@ const create = async (projectData:object) => {
     console.log(error);
   }
 }
-const deleteProject = async (name) => {
+const deleteProject = async (name:string) => {
   try {
     const res = await fetch(`${BASE_URL}/${name}`, {
       method: 'DELETE',
@@ -48,12 +48,14 @@ const deleteProject = async (name) => {
 }
 const updateProject = async (projectData: Project) => {
   try {
-    const res = await fetch(`${BASE_URL}/${projectData.name}`, {
+    console.log("projectdata",projectData)
+    const res = await fetch(`${BASE_URL}/${projectData.id}`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
         'Content-Type': 'application/json'
-      }
+      },
+      body: JSON.stringify(projectData)
     })
     return res.json()
   } catch (error) {

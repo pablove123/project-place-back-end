@@ -4,7 +4,7 @@ import ProjectCard from "../ProjectCard/projectCard";
 interface ProjectProps{
   projects: Project[], 
   user: User | null;
-  handleDeleteProject: (name) => void;
+  handleDeleteProject: (name:string) => void;
   handleUpdateProject: (projectData:Project) => void
 }
 const ProjectList = (props:ProjectProps) => {

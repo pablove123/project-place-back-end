@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 interface ProjectCardProps{
   projects: Project[],
   user: User | null | number;
-  handleDeleteProject: (name) => void;
+  handleDeleteProject: (name:string) => void;
   handleUpdateProject: (projectData:Project) => void
 }
 
@@ -27,7 +27,7 @@ const ProjectCard = (props:ProjectCardProps):JSX.Element => {
               <button onClick={() => props.handleDeleteProject(project.name)}>Delete</button>
             </div>
             <div>
-            <Link to={`/projects/${project.name}/edit`} state={project}>Update Exerience</Link>
+            <Link to={`/projects/${project.name}`} state={project}>Update Exerience</Link>
             </div>
           </>
           }
