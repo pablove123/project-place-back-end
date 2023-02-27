@@ -105,12 +105,19 @@ h1{
   margin-left: 20px;
   height: 40px; 
   width: 100px;
-  margin-top: 25px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 #update {
-  margin-top: 25px;
+  margin-top: 20px;
   margin-left: 50px;
   height: 40px; 
-  width: px;
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+#profileCard{
+  text-align: center;
+  display: flex;
 }

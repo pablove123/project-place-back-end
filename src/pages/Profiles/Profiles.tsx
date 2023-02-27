@@ -1,5 +1,6 @@
 // npm packages
 import { useState, useEffect } from 'react'
+import ProfileCard from '../../components/profileCard/profileCard'
 
 // services
 import * as profileService from '../../services/profileService'
@@ -31,8 +32,8 @@ const Profiles = (): JSX.Element => {
       <h1>List of Profiles</h1>
       {profiles.map((profile: Profile) =>
       <>
-          {console.log(profile)}
         <p key={profile.id}>{profile.name}</p>
+          <ProfileCard key={profile.name} profile={profile}/>
       </>
       )}
     </>
