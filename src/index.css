@@ -53,17 +53,17 @@ a:visited {
 }
 
 a:hover {
-  color: aqua;
+  color:  rgb(164, 76, 164);
 }
 button:hover {
   text-decoration: underline;
-  background-color: aqua;
+  background-color:  rgb(184, 10, 184);
 }
-
 
 
 h1{
   margin-top: 100px;
+  font-size: 60px;
 }
 .projectCard{
   margin: 20px;
@@ -75,8 +75,8 @@ h1{
   justify-content: flex-start;
   padding: 15px;
   border: 1px solid gray;
-  /* background-color: whitesmoke; */
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ61veKM4W8uycv19mD9Ytb3LSgbauq9x52j1h_j3Ftvw&usqp=CAU&ec=48600113")
+  background-color: rgb(164, 76, 164);
+  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ61veKM4W8uycv19mD9Ytb3LSgbauq9x52j1h_j3Ftvw&usqp=CAU&ec=48600113") */
 }
 
 .projectListContainer {
@@ -97,11 +97,19 @@ h1{
   width: 250px;
   align-items: center;
   margin-left: 25px;
+  background-color: black;
+  padding: 5px;
+  margin-top: -10px;
 }
 
 #projectName{
   text-align: center;
   font-size: x-large;
+  background-color: aliceblue;
+  border: 3px solid black;
+  padding: 5px;
+  margin-top: 0px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #linkSection{
@@ -113,12 +121,14 @@ h1{
   margin-left: 20px;
   height: 40px; 
   width: 100px;
+  border-radius: 10px;
 }
 
 #app > button{
   margin-left: 50px;
   height: 40px; 
   width: 100px;
+  border-radius: 10px;
 }
 #delete{
   margin-left: 20px;
@@ -126,6 +136,7 @@ h1{
   width: 100px;
   margin-top: 20px;
   margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 #update {
@@ -134,10 +145,70 @@ h1{
   height: 40px; 
   width: 100px;
   margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 #profileCard{
   text-align: center;
   display: flex;
+  margin: 20px;
+  object-fit: cover;
+  padding: 15px;
 }
 
+#profileName{
+  margin-left: 20px;
+  font-size: x-large;
+}
+
+#profileProjectName{
+  text-align: center;
+  font-size: x-large;
+  background-color: aliceblue;
+  border: 3px solid black;
+  padding: 5px;
+  margin-left: 30px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#profileProjectName > a:visited {
+  color:  black;
+}
+#profileProjectName > a:hover {
+  color:  gray;
+}
+
+#formProjectName > input {
+  height: 30px;
+  line-height: 30px;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+#formProjectName > label{
+  text-align: center;
+  padding-right: 5%;
+}
+.addProject{
+  text-align: center;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 300px;
+}
+
+#formSubmit{
+  line-height: 40px;
+  width:100%;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 30px;
+}
+
+#noProject{
+  font-size: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

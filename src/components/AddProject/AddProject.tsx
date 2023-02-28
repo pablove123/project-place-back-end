@@ -31,8 +31,8 @@ const AddProject = (props:CreateProjectProps): JSX.Element => {
     <main className="addProject">
       <h1>Create A Project Below</h1> 
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name</label>
+        <div id="formProjectName">
+          <label htmlFor="name">Project Name:</label>
           <input
             onChange={handleChange}
             type="text" 
@@ -40,8 +40,8 @@ const AddProject = (props:CreateProjectProps): JSX.Element => {
             value={form.name}
             placeholder="Project Name"/>
         </div>
-        <div>
-          <label htmlFor="app">Deployed App</label>
+        <div id="formProjectName">
+          <label htmlFor="app">Deployed App:</label>
           <input
           onChange={handleChange}
             type="text" 
@@ -49,8 +49,8 @@ const AddProject = (props:CreateProjectProps): JSX.Element => {
             value={form.app}
             placeholder="Deployed App link"/>
         </div>
-        <div>
-          <label htmlFor="github">Github</label>
+        <div id="formProjectName">
+          <label htmlFor="github">Github Repo:</label>
           <input
           onChange={handleChange}
             type="text" 
@@ -58,8 +58,8 @@ const AddProject = (props:CreateProjectProps): JSX.Element => {
             value={form.github}
             placeholder="Github Link"/>
         </div>
-        <div>
-          <label htmlFor="picture">Image Link</label>
+        <div id="formProjectName">
+          <label htmlFor="picture">Image Link:</label>
           <input
           onChange={handleChange}
           type="text" 
@@ -67,7 +67,7 @@ const AddProject = (props:CreateProjectProps): JSX.Element => {
           value={form.picture}
           placeholder="Image Link"/>
         </div>
-        <button type="submit">Create Project</button>
+        <button id="formSubmit" type="submit">Create Project</button>
       </form>
     </main>
     </>

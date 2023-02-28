@@ -10,9 +10,14 @@ const ProfileCard = (props:profileCardProps) => {
   return ( 
     <>
     <div id="profileCard">
+      {props.profile.projects.length === 0 &&
+      <>
+      <p id="noProject" >No projects posted yet</p>
+      </>}
     {props.profile.projects.map((project) =>
-    <div >
-        <p>{project.name}</p>
+    <div key={project.name}> 
+      
+        <p  id="profileProjectName"> <a href={project.app}>{project.name}</a></p>
         <img id="projectPicture" src={project.picture} alt="" />
     </div>
     )}

@@ -15,6 +15,7 @@ const Landing = (props: LandingProps): JSX.Element => {
     <main className={styles.container}>
       <h1>Hello {user ? user.name : 'friend'}!</h1>
       <h2>{user ? 'Click Projects to check out some of our projects!' : 'Sign in to see our projects posted'}</h2>
+      <h2>{user ? 'Or even create your own!' : 'and post your own Project'}</h2>
     </main>
   )
 }

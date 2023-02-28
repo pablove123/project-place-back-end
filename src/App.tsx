@@ -59,32 +59,19 @@ function App(): JSX.Element {
 
   const handleDeleteProject = async (name:string) => {
     const deletedProject = await projectService.deleteProject(name)
-    // setProjects(projects.filter(b => b.name !== deletedProject.name))
-    // navigate('/')
     const updatedProjects = await projectService.getAllProjects()
     setProjects(updatedProjects)
     navigate(`/projects`)
   }
   const handleUpdateProject = async (projectData: Project) => {
     const updatedProject = await projectService.updateProject(projectData)
-    // setProjects(projects.map((b) => projectData.name === b.name ? updatedProject : b))
     const updatedProjects = await projectService.getAllProjects()
     setProjects(updatedProjects)
     navigate(`/projects`)
   }
 
-
-  // const projectPhotoHelper = async (photo:string, id): Promise<void> => {
-  //   const photoData = new FormData()
-  //   photoData.append('photo', photo)
-  //   return await projectService.addPhoto(photoData, id)
-  // }
-
   const handleAddProject = async (projectData:object): Promise<void> => {
     const newProject = await projectService.create(projectData)
-    // if(photo){
-    //   newProject.photo = await projectPhotoHelper(photo, newProject.profileId)
-    // }
     setProjects([newProject, ...projects])
     navigate(`/projects`)
   }
