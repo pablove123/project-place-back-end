@@ -11,7 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+body{
+  background-color: gray;
+}
 nav {
   top: 0;
   z-index: 1;
@@ -21,8 +23,9 @@ nav {
   position: fixed;
   padding: 12px 20px;
   align-items: center;
-  background: white;
+  background: black;
   border-bottom: 1px solid rgb(200, 200, 200);
+  color: white
 }
 
 nav img {
@@ -44,6 +47,21 @@ nav li {
   text-align: right;
 }
 
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: aqua;
+}
+button:hover {
+  text-decoration: underline;
+  background-color: aqua;
+}
+
+
+
 h1{
   margin-top: 100px;
 }
@@ -57,7 +75,8 @@ h1{
   justify-content: flex-start;
   padding: 15px;
   border: 1px solid gray;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ61veKM4W8uycv19mD9Ytb3LSgbauq9x52j1h_j3Ftvw&usqp=CAU&ec=48600113")
 }
 
 .projectListContainer {
