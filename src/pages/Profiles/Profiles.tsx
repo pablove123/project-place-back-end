@@ -29,7 +29,7 @@ const Profiles = (): JSX.Element => {
 
   return (
     <>
-      <h1>Profiles and Posts</h1>
+      <h1 id='profileTitle'>Profiles and Posts</h1>
       {profiles.map((profile: Profile) =>
       <>
         <p id='profileName' key={profile.createdAt}>➤{profile.name} has posted {profile.projects.length} projects</p>

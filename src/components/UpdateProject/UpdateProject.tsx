@@ -32,7 +32,7 @@ const UpdateProject = (props:UpdateProjectProps) => {
       <main className="addProject">
       <h1>Update Your Project Below</h1> 
       <form onSubmit={handleSubmit}>
-        <div>
+        <div id="formProjectName">
           <label htmlFor="name">Name</label>
           <input
             onChange={handleChange}
@@ -41,7 +41,7 @@ const UpdateProject = (props:UpdateProjectProps) => {
             value={form.name}
             placeholder="Project Name"/>
         </div>
-        <div>
+        <div id="formProjectName">
           <label htmlFor="app">Deployed App</label>
           <input
           onChange={handleChange}
@@ -50,7 +50,7 @@ const UpdateProject = (props:UpdateProjectProps) => {
             value={form.app}
             placeholder="Deployed App link"/>
         </div>
-        <div>
+        <div id="formProjectName">
           <label htmlFor="github">Github</label>
           <input
           onChange={handleChange}
@@ -59,7 +59,7 @@ const UpdateProject = (props:UpdateProjectProps) => {
             value={form.github}
             placeholder="Github Link"/>
         </div>
-        <div>
+        <div id="formProjectName">
           <label htmlFor="picture">Image Link</label>
           <input
           onChange={handleChange}
@@ -68,7 +68,7 @@ const UpdateProject = (props:UpdateProjectProps) => {
           value={form.picture}
           placeholder="Image Link"/>
         </div>
-        <button type="submit">Update Project</button>
+        <button id="formSubmit" type="submit">Update Project</button>
       </form>
     </main>
     </>

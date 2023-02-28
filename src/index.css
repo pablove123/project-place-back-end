@@ -76,7 +76,6 @@ h1{
   padding: 15px;
   border: 1px solid gray;
   background-color: rgb(164, 76, 164);
-  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ61veKM4W8uycv19mD9Ytb3LSgbauq9x52j1h_j3Ftvw&usqp=CAU&ec=48600113") */
 }
 
 .projectListContainer {
@@ -182,18 +181,24 @@ h1{
   height: 30px;
   line-height: 30px;
   border: 3px solid black;
+  margin-top: 20px;
   border-radius: 10px;
 }
 #formProjectName > label{
   text-align: center;
+  font-size: 30px;
   padding-right: 5%;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 10px;
+  padding: 5px;
 }
 .addProject{
   text-align: center;
   width: 400px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 300px;
+  margin-top: 200px;
 }
 
 #formSubmit{
@@ -211,4 +216,8 @@ h1{
   margin-bottom: 0px;
   margin-left: 20px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#profileTitle{
+  text-align: center;
+  padding-top: 20px;
 }
