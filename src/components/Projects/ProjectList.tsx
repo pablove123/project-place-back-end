@@ -11,7 +11,7 @@ const ProjectList = (props:ProjectProps) => {
   const {projects} = props
   return (
     <>
-    <h1 id="projectListHeader">Check out posted projects below</h1>
+    <h1 id="projectListHeader">Posted Projects</h1>
     <div className='projectListContainer'>
     <ProjectCard projects={projects} user={props.user} handleDeleteProject={props.handleDeleteProject} handleUpdateProject={props.handleUpdateProject}/>
     </div>

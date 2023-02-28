@@ -17,8 +17,8 @@ const ProfileCard = (props:profileCardProps) => {
     {props.profile.projects.map((project) =>
     <div key={project.name}> 
       
-        <p  id="profileProjectName"> <a href={project.app}>{project.name}</a></p>
-        <img id="projectPicture" src={project.picture} alt="" />
+        <p key={project.name} id="profileProjectName"> <a href={project.app}>{project.name}</a></p>
+        <img key={project.createdAt} id="projectPicture" src={project.picture} alt="" />
     </div>
     )}
     </div>

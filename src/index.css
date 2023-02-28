@@ -116,18 +116,22 @@ h1{
   /* justify-content: center; */
 }
 
+
 #github > button{
   margin-left: 20px;
   height: 40px; 
-  width: 100px;
+  width: 125px;
   border-radius: 10px;
+  background-color: rgb(143, 248, 237);
 }
 
 #app > button{
-  margin-left: 50px;
+  margin-left: 25px;
   height: 40px; 
-  width: 100px;
+  width: 125px;
   border-radius: 10px;
+  background-color: rgb(143, 248, 237);
+  font-size: 15px;
 }
 #delete{
   margin-left: 20px;
@@ -136,6 +140,11 @@ h1{
   margin-top: 20px;
   margin-bottom: 10px;
   border-radius: 10px;
+  margin-left: 20px;
+  height: 40px; 
+  width: 125px;
+  border-radius: 10px;
+  background-color: rgb(143, 248, 237);
 }
 
 #update {
@@ -145,6 +154,12 @@ h1{
   width: 100px;
   margin-bottom: 10px;
   border-radius: 10px;
+  margin-left: 25px;
+  height: 40px; 
+  width: 125px;
+  border-radius: 10px;
+  background-color: rgb(143, 248, 237);
+  font-size: 15px;
 }
 
 #profileCard{
@@ -220,4 +235,9 @@ h1{
 #profileTitle{
   text-align: center;
   padding-top: 20px;
+}
+
+#projectListHeader{
+  margin-bottom: 10px;
+
 }

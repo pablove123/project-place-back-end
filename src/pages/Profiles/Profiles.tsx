@@ -31,10 +31,11 @@ const Profiles = (): JSX.Element => {
     <>
       <h1 id='profileTitle'>Profiles and Posts</h1>
       {profiles.map((profile: Profile) =>
-      <>
+      <div key={profile.createdAt}>
+
         <p id='profileName' key={profile.createdAt}>➤{profile.name} has posted {profile.projects.length} projects</p>
-          <ProfileCard key={profile.name} profile={profile}/>
-      </>
+          <ProfileCard  profile={profile}/>
+      </div>
       )}
     </>
   )

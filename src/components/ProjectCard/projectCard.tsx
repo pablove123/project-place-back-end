@@ -14,8 +14,8 @@ const ProjectCard = (props:ProjectCardProps):JSX.Element => {
   return ( 
     <>
       {projects.map((project)=>
-        <>
-          <div className="projectCard" key={project.name}>
+        <main key={project.name}>
+          <div className="projectCard" >
           <p id="projectName">{project.name}</p>
           <p><img id="projectPicture" src={project.picture} alt="" /></p>
           <div key={project.name} id="linkSection">
@@ -32,7 +32,7 @@ const ProjectCard = (props:ProjectCardProps):JSX.Element => {
           </>
           }
           </div>
-        </>
+        </main>
       )}
     </>
     
